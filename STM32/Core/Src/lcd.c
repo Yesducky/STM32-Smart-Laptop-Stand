@@ -391,10 +391,10 @@ void LCD_DrawChar ( uint16_t usC, uint16_t usP, const char cChar )
 		for ( ucColumn = 0; ucColumn < WIDTH_EN_CHAR; ucColumn ++ )
 		{
 			if ( ucTemp & 0x01 )
-				LCD_Write_Data ( WHITE );
+				LCD_Write_Data ( BLACK );
 			
 			else
-				LCD_Write_Data (  BACKGROUND );
+				LCD_Write_Data (  WHITE );
 			
 			ucTemp >>= 1;		
 			
@@ -473,7 +473,7 @@ void LCD_DrawEllipse ( uint16_t usC, uint16_t usP, uint16_t SR, uint16_t LR, uin
 }
 
 
-void LCD_DisplayInterface(){
+void LCD_DisplayInterface(void){
 	LCD_OpenWindow(0, 0, 240, 320);
 	LCD_Write_Cmd ( CMD_SetPixel );
 	for(int i = 0; i < 320; i++){
@@ -655,5 +655,67 @@ void LCD_DisplayNum(int num){
 	}
 }
 
+void LCD_DrawChar_Color ( uint16_t usC, uint16_t usP, const char cChar, uint16_t usColor_Background, uint16_t usColor_Foreground )
+{
+	uint8_t ucTemp, ucRelativePositon, ucPage, ucColumn;
+
+	ucRelativePositon = cChar - ' ';
+
+	LCD_OpenWindow ( usC, usP, WIDTH_EN_CHAR, HEIGHT_EN_CHAR );
+
+	LCD_Write_Cmd ( CMD_SetPixel );
+
+	for ( ucPage = 0; ucPage < HEIGHT_EN_CHAR; ucPage ++ )
+	{
+		ucTemp = ucAscii_1608 [ ucRelativePositon ] [ ucPage ];
+
+		for ( ucColumn = 0; ucColumn < WIDTH_EN_CHAR; ucColumn ++ )
+		{
+			if ( ucTemp & 0x01 )
+				LCD_Write_Data ( usColor_Foreground );
+
+			else
+				LCD_Write_Data ( usColor_Background );
+
+			ucTemp >>= 1;
+
+		}
+
+	}
+
+}
+
+void LCD_DrawCross ( uint16_t usX, uint16_t usY )
+{
+  LCD_Clear ( usX - 10, usY, 20, 1, RED);
+  LCD_Clear ( usX, usY - 10, 1, 20, RED);
+
+}
+
+void LCD_DrawString_Color ( uint16_t usC, uint16_t usP, const char * pStr, uint16_t usColor_Background, uint16_t usColor_Foreground )
+{
+	while ( * pStr != '\0' )
+	{
+		if ( ( usC - LCD_DispWindow_Start_COLUMN + WIDTH_EN_CHAR ) > LCD_DispWindow_COLUMN )
+		{
+			usC = LCD_DispWindow_Start_COLUMN;
+			usP += HEIGHT_EN_CHAR;
+		}
+
+		if ( ( usP - LCD_DispWindow_Start_PAGE + HEIGHT_EN_CHAR ) > LCD_DispWindow_PAGE )
+		{
+			usC = LCD_DispWindow_Start_COLUMN;
+			usP = LCD_DispWindow_Start_PAGE;
+		}
+
+		LCD_DrawChar_Color  ( usC, usP, * pStr, usColor_Background, usColor_Foreground );
+
+		pStr ++;
+
+		usC += WIDTH_EN_CHAR;
+
+	}
+
+}
 
 
