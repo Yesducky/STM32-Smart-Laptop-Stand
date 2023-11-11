@@ -57,7 +57,7 @@ void            LCD_BackLed_Control	( FunctionalState enumState );
 void            LCD_Write_Cmd		( uint16_t usCmd );
 void            LCD_Write_Data		( uint16_t usData );
 uint16_t        LCD_Read_Data		( void );
-void		LCD_FillColor		( uint32_t usPoint, uint16_t usColor );
+void			LCD_FillColor		( uint32_t usPoint, uint16_t usColor );
 void            LCD_OpenWindow		( uint16_t usC, uint16_t usP, uint16_t usWidth, uint16_t usHeight );
 void            LCD_Clear		( uint16_t usC, uint16_t usP, uint16_t usWidth, uint16_t usHeight, uint16_t usColor );
 uint16_t        LCD_GetPointPixel	( uint16_t usC , uint16_t usP );
@@ -65,6 +65,26 @@ void            LCD_DrawLine		( uint16_t usC1, uint16_t usP1, uint16_t usC2, uin
 void            LCD_DrawChar		( uint16_t usC, uint16_t usP, const char cChar);
 void            LCD_DrawString		( uint16_t usC, uint16_t usP, const char * pStr);
 void            LCD_DrawDot		( uint16_t usC, uint16_t usP, uint16_t usColor );
-void 		LCD_DrawEllipse		( uint16_t usC, uint16_t usP, uint16_t SR, uint16_t LR, uint16_t usColor);
+void 			LCD_DrawEllipse		( uint16_t usC, uint16_t usP, uint16_t SR, uint16_t LR, uint16_t usColor);
+void			LCD_DisplayNum	(int num);
+void			LCD_DisplayInterface(void);
+void 			LCD_DrawCross ( uint16_t usX, uint16_t usY );
+void 			LCD_DrawChar_Color ( uint16_t usC, uint16_t usP, const char cChar, uint16_t usColor_Background, uint16_t usColor_Foreground );
+void 			LCD_DrawString_Color ( uint16_t usC, uint16_t usP, const char * pStr, uint16_t usColor_Background, uint16_t usColor_Foreground );
+
+typedef	struct         
+{	
+   uint16_t x;		
+   uint16_t y;
+	
+} Coordinates;
+
+typedef	struct         
+{	
+   Coordinates Top_Left;		
+   Coordinates Bottom_Right;	
+} ButtonCoordinates;
+
+
 #endif 
 

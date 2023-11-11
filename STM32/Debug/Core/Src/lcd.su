@@ -28,3 +28,6 @@
 ../Core/Src/lcd.c:570:6:LCD_Display8	24	static
 ../Core/Src/lcd.c:580:6:LCD_Display9	24	static
 ../Core/Src/lcd.c:590:6:LCD_DisplayNum	24	static
+../Core/Src/lcd.c:658:6:LCD_DrawChar_Color	32	static
+../Core/Src/lcd.c:688:6:LCD_DrawCross	24	static
+../Core/Src/lcd.c:695:6:LCD_DrawString_Color	40	static

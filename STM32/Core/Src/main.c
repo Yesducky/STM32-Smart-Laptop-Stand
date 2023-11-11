@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "lcd.h"
+#include "xpt2046.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -88,22 +89,40 @@ int main(void)
   MX_GPIO_Init();
   MX_FSMC_Init();
   /* USER CODE BEGIN 2 */
+  //LCD
   LCD_INIT();
   LCD_DisplayInterface();
+
+  //STEPPER
+//  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_6, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
+
+  //LED
+//  int rgb_state = 0;
+//  uint16_t gpioPin[] = {GPIO_PIN_1, GPIO_PIN_5, GPIO_PIN_0};
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  for(int i= 0; i < 30; i++){
-		  LCD_DisplayNum(i);
-		  HAL_Delay(500);
-	  }
-	  HAL_GPIO_WritePin(GPIOC, 4, GPIO_PIN_SET);
-	  HAL_Delay(5);
-	  HAL_GPIO_WritePin(GPIOC, 4, GPIO_PIN_RESET);
-	  HAL_Delay(5);
+//	  for(int i= 0; i < 30; i++){
+//		  LCD_DisplayNum(i);
+//		  HAL_Delay(500);
+//	  }
+
+	    if ( ucXPT2046_TouchFlag == 1 )
+	    {
+	    	Check_touchkey();
+	    	ucXPT2046_TouchFlag = 0;
+	    }
+
+
+//	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);
+//	  HAL_Delay(1);
+//	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);
+//	  HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -162,24 +181,46 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, dir1_Pin|LCD_RST_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, LCD_TP_Pin|dir1_Pin|LCD_TPE0_Pin|LCD_RST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(step1_GPIO_Port, step1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, onboard_led_Pin|onboard_ledB1_Pin|onboard_ledB5_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pins : dir1_Pin LCD_RST_Pin */
-  GPIO_InitStruct.Pin = dir1_Pin|LCD_RST_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, LCD_BL_Pin|LCD_TPD13_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : LCD_TP_Pin dir1_Pin LCD_TPE0_Pin LCD_RST_Pin */
+  GPIO_InitStruct.Pin = LCD_TP_Pin|dir1_Pin|LCD_TPE0_Pin|LCD_RST_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LCD_TPE3_Pin */
+  GPIO_InitStruct.Pin = LCD_TPE3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(LCD_TPE3_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LCD_TP_EXT14_Pin */
+  GPIO_InitStruct.Pin = LCD_TP_EXT14_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(LCD_TP_EXT14_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : key2_Pin */
+  GPIO_InitStruct.Pin = key2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(key2_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : step1_Pin */
   GPIO_InitStruct.Pin = step1_Pin;
@@ -188,12 +229,23 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(step1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LCD_BL_Pin */
-  GPIO_InitStruct.Pin = LCD_BL_Pin;
+  /*Configure GPIO pins : onboard_led_Pin onboard_ledB1_Pin onboard_ledB5_Pin */
+  GPIO_InitStruct.Pin = onboard_led_Pin|onboard_ledB1_Pin|onboard_ledB5_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(LCD_BL_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LCD_BL_Pin LCD_TPD13_Pin */
+  GPIO_InitStruct.Pin = LCD_BL_Pin|LCD_TPD13_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_IRQn);
 
 }
 
