@@ -1,0 +1,3 @@
+../Core/Src/HMC5883L.c:4:7:g85_makeuint16	16	static
+../Core/Src/HMC5883L.c:10:7:Init_HMC5883L_HAL	40	static
+../Core/Src/HMC5883L.c:19:8:read_hmc5883l_HAL	56	static
