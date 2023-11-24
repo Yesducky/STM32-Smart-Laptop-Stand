@@ -5,4 +5,4 @@
 ../Core/Src/xpt2046.c:105:13:XPT2046_ReadAdc_XY	24	static
 ../Core/Src/xpt2046.c:125:16:XPT2046_ReadAdc_Smooth_XY	80	static
 ../Core/Src/xpt2046.c:197:9:XPT2046_Get_TouchedPoint	40	static
-../Core/Src/xpt2046.c:223:6:Check_touchkey	96	static
+../Core/Src/xpt2046.c:224:5:Check_touchkey	96	static

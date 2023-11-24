@@ -49,6 +49,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -64,12 +66,20 @@ void Error_Handler(void);
 #define LCD_TP_EXT14_Pin GPIO_PIN_4
 #define LCD_TP_EXT14_GPIO_Port GPIOE
 #define LCD_TP_EXT14_EXTI_IRQn EXTI4_IRQn
-#define dir1_Pin GPIO_PIN_6
+#define dir1_Pin GPIO_PIN_5
 #define dir1_GPIO_Port GPIOE
+#define dir2_Pin GPIO_PIN_6
+#define dir2_GPIO_Port GPIOE
 #define key2_Pin GPIO_PIN_13
 #define key2_GPIO_Port GPIOC
-#define step1_Pin GPIO_PIN_4
-#define step1_GPIO_Port GPIOC
+#define key2_EXTI_IRQn EXTI15_10_IRQn
+#define key1_Pin GPIO_PIN_0
+#define key1_GPIO_Port GPIOA
+#define key1_EXTI_IRQn EXTI0_IRQn
+#define step1_Pin GPIO_PIN_6
+#define step1_GPIO_Port GPIOA
+#define step2_Pin GPIO_PIN_7
+#define step2_GPIO_Port GPIOA
 #define onboard_led_Pin GPIO_PIN_0
 #define onboard_led_GPIO_Port GPIOB
 #define onboard_ledB1_Pin GPIO_PIN_1
@@ -85,7 +95,8 @@ void Error_Handler(void);
 #define LCD_RST_Pin GPIO_PIN_1
 #define LCD_RST_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
-
+void stepper_up(void);
+void stepper_stop(void);
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

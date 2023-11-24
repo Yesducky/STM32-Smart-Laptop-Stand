@@ -1,0 +1,2 @@
+../Core/Src/hmc.c:18:6:HMC5883L_Init	32	static
+../Core/Src/hmc.c:24:5:HMC5883L_Read	32	static

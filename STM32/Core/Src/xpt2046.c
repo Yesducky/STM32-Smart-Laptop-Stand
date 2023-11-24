@@ -215,12 +215,13 @@ uint8_t XPT2046_Get_TouchedPoint ( strType_XPT2046_Coordinate * pDisplayCoordina
 	
 } 
 
-ButtonCoordinates ResetButton = { { 35, 185 }, { 130, 210 } };
-ButtonCoordinates AutoButton = { { 180, 185 }, { 270, 210 } };
-ButtonCoordinates UpButton = { { 240, 30 }, { 300, 90 } };
-ButtonCoordinates DownButton = { { 240, 100 }, { 300, 150 } };
+ButtonCoordinates ResetButton = { { 25, 170 }, { 120, 210 } };
+ButtonCoordinates AutoButton = { { 135, 170 }, { 220, 210 } };
+ButtonCoordinates UpButton = { { 240, 10 }, { 300, 60 } };
+ButtonCoordinates DownButton = { { 240, 160 }, { 300, 210 } };
+ButtonCoordinates PauseButton = { { 240, 75 }, { 300, 145 } };
 
-void Check_touchkey(void)
+int Check_touchkey()
 {
 		strType_XPT2046_Coordinate strDisplayCoordinate;
 	
@@ -236,33 +237,36 @@ void Check_touchkey(void)
 		LCD_DrawString(50, 100, str1);
 		LCD_DrawString(50, 115, str2);
 
-		HAL_GPIO_WritePin(GPIOB, gpioPin[0], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOB, gpioPin[1], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOB, gpioPin[2], GPIO_PIN_SET);
 
 		if( (strDisplayCoordinate.x >= ResetButton.Top_Left.x && strDisplayCoordinate.x <= ResetButton.Bottom_Right.x)  &&
 			(strDisplayCoordinate.y >= ResetButton.Top_Left.y && strDisplayCoordinate.y <= ResetButton.Bottom_Right.y)){
-				HAL_GPIO_WritePin(GPIOB, gpioPin[1], GPIO_PIN_RESET);
+				return 1;
 			}
 
 		if( (strDisplayCoordinate.x >= AutoButton.Top_Left.x && strDisplayCoordinate.x <= AutoButton.Bottom_Right.x)  &&
 			(strDisplayCoordinate.y >= AutoButton.Top_Left.y && strDisplayCoordinate.y <= AutoButton.Bottom_Right.y)){
-				HAL_GPIO_WritePin(GPIOB, gpioPin[2], GPIO_PIN_RESET);
+				return 2;
 			}
 
 		if( (strDisplayCoordinate.x >= UpButton.Top_Left.x && strDisplayCoordinate.x <= UpButton.Bottom_Right.x)  &&
 			(strDisplayCoordinate.y >= UpButton.Top_Left.y && strDisplayCoordinate.y <= UpButton.Bottom_Right.y)){
-				HAL_GPIO_WritePin(GPIOB, gpioPin[2], GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(GPIOB, gpioPin[1], GPIO_PIN_RESET);
+				return 3;
 			}
 
 		if( (strDisplayCoordinate.x >= DownButton.Top_Left.x && strDisplayCoordinate.x <= DownButton.Bottom_Right.x)  &&
 			(strDisplayCoordinate.y >= DownButton.Top_Left.y && strDisplayCoordinate.y <= DownButton.Bottom_Right.y)){
-				HAL_GPIO_WritePin(GPIOB, gpioPin[2], GPIO_PIN_RESET);
-				HAL_GPIO_WritePin(GPIOB, gpioPin[0], GPIO_PIN_RESET);
+				return 4;
+			}
+
+		if( (strDisplayCoordinate.x >= PauseButton.Top_Left.x && strDisplayCoordinate.x <= PauseButton.Bottom_Right.x)  &&
+			(strDisplayCoordinate.y >= PauseButton.Top_Left.y && strDisplayCoordinate.y <= PauseButton.Bottom_Right.y)){
+				return 5;
 			}
 
 
+	}
+	else{
+		return 0;
 	}
 }
 
