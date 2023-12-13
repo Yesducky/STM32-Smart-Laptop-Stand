@@ -322,11 +322,11 @@ Design:
 <br>
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img4.jpg" alt="Design Front">
 <br>
-<img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img5.jpg" alt="Design Top">
+<img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img5.jpg" alt="Design Side">
 <br>
 Outcome:
-![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)
-![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img2.jpg)
-![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img3.jpg)
+<img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg" alt="With Laptop">
+<img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img2.jpg" alt="Without Laptop">
+<img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img3.jpg" alt="All components">
 
 
