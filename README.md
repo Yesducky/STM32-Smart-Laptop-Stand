@@ -12,7 +12,7 @@ Hardware:
 - [X] 7-segments LED
 - [X] 24V battery
 
-|   Function  	|      Device/Config     	| Port 	| Pin 	|    	|    	|    	|    	|    	|    	|    	|    	|    	|    	|    	|
+|   Function  	|      Device/Config     	| Port 	| Pin 	|
 |:-----------:	|:----------------------:	|:----:	|:---:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|
 |    Camera   	|     Camera data bus    	|   B  	|  8  	|  9 	| 10 	| 11 	| 12 	| 13 	| 14 	| 15 	| 　 	| 　 	| 　 	| 　 	|
 |             	|     Camera control     	|   C  	|  2  	|  3 	|  6 	|  7 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
