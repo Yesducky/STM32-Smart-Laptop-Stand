@@ -1,9 +1,9 @@
 # STM32-Smart-Laptop-Stand
 
-Function:\
+###Function:###\
 Automatically adjust the height of the laptop stand according to the user's height. Manual adjustment also allowed.
 
-Workflow:
+####Workflow:####
 1. User click the auto button on the touch screen
 2. Camera capture an image and send to the computer
 3. Use OpenCV to obtain the height
@@ -13,10 +13,10 @@ Workflow:
 7. Control the actuators to adjust the laptop stand
 8. Keep updating the current height of the smart laptop stand while adjustment
 
-Alt Function:\
+###Alt Function:###\
 Laptop cooling fan - 3 different levels of fan speed can be adjusted through touch screen
 
-Hardware:  
+###Hardware: ### 
 - [x] STM32F103VET6   
 - [X] Touch Screen   
 - [X] 2x Actuator
@@ -31,7 +31,7 @@ Hardware:
 
 <br>
 
-Pinout:
+###Pinout:###
 <table class="tg">
 <thead>
   <tr>
@@ -335,12 +335,12 @@ Pinout:
 </table>
 
 <br>
-Design:
+###Design:###
 <br>
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img4.jpg" alt="Design Front">
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img5.jpg" width="1000px;" alt="Design Side">
 <br>
-Outcome:
+###Outcome:###
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg" alt="With Laptop">
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img2.jpg" alt="Without Laptop">
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img3.jpg" alt="All components">
