@@ -319,10 +319,15 @@ Pinout:
 
 <br>
 Design:
-
+<br>
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img4.jpg)
+<br>
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img5.jpg)
 
 <br>
 Outcome:
-
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img2.jpg)
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg)https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img3.jpg)
 
 
