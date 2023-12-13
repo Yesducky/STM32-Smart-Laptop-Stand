@@ -321,7 +321,6 @@ Pinout:
 Design:
 <br>
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img4.jpg" alt="Design Front">
-<br>
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img5.jpg" alt="Design Side">
 <br>
 Outcome:
