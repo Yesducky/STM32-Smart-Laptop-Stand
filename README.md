@@ -337,7 +337,7 @@ Laptop cooling fan - 3 different levels of fan speed can be adjusted through tou
 ### Design: ###
 
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img4.jpg" alt="Design Front">
-<img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img5.jpg" width="1000px;" alt="Design Side">\
+<img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img5.jpg" width="1000px;" alt="Design Side">
 
 ### Outcome: ###
 <img src="https://github.com/Yesducky/STM32-Smart-Laptop-Stand/blob/main/assets/img1.jpg" alt="With Laptop">
