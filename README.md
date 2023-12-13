@@ -319,12 +319,10 @@ Pinout:
 
 <br>
 Design:
-![image]([https://github.com/Yesducky/STM32-Smart-Laptop-Stand/assets/97087621/a1a5ea2c-a6dd-414c-8f25-1163cf767388](https://github-production-user-asset-6210df.s3.amazonaws.com/97087621/290048644-a1a5ea2c-a6dd-414c-8f25-1163cf767388.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231213T014337Z&X-Amz-Expires=300&X-Amz-Signature=8be2b6c85c4494d343efd7a6b1cd82a2e46333ac2520985920aab4dd1a9f133d&X-Amz-SignedHeaders=host&actor_id=97087621&key_id=0&repo_id=698052464)https://github-production-user-asset-6210df.s3.amazonaws.com/97087621/290048644-a1a5ea2c-a6dd-414c-8f25-1163cf767388.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231213T014337Z&X-Amz-Expires=300&X-Amz-Signature=8be2b6c85c4494d343efd7a6b1cd82a2e46333ac2520985920aab4dd1a9f133d&X-Amz-SignedHeaders=host&actor_id=97087621&key_id=0&repo_id=698052464)
-![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/assets/97087621/24981236-c97e-4a67-abce-768c6cbe1074)
+
 
 <br>
 Outcome:
-![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/assets/97087621/6fbe598c-612f-4601-9caa-3c69df77a62b)
-![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/assets/97087621/61fa037c-0cb0-4262-8d37-1e6fd5dc9493)
+
 
 
