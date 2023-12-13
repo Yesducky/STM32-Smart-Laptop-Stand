@@ -14,6 +14,7 @@ Hardware:
 
 <br>
 
+Pinout:
 <table class="tg">
 <thead>
   <tr>
@@ -315,3 +316,15 @@ Hardware:
   </tr>
 </tbody>
 </table>
+
+<br>
+Design:
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/assets/97087621/a1a5ea2c-a6dd-414c-8f25-1163cf767388)
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/assets/97087621/24981236-c97e-4a67-abce-768c6cbe1074)
+
+<br>
+Outcome:
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/assets/97087621/6fbe598c-612f-4601-9caa-3c69df77a62b)
+![image](https://github.com/Yesducky/STM32-Smart-Laptop-Stand/assets/97087621/61fa037c-0cb0-4262-8d37-1e6fd5dc9493)
+
+
