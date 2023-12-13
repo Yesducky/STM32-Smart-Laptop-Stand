@@ -1,9 +1,9 @@
 # STM32-Smart-Laptop-Stand
 
-### Function: \
+### Function:
 Automatically adjust the height of the laptop stand according to the user's height. Manual adjustment also allowed.
 
-####Workflow:####
+#### Workflow: ####
 1. User click the auto button on the touch screen
 2. Camera capture an image and send to the computer
 3. Use OpenCV to obtain the height
