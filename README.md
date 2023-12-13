@@ -12,22 +12,312 @@ Hardware:
 - [X] 7-segments LED
 - [X] 24V battery
 
-|   Function  	|      Device/Config     	| Port 	| Pin 	|
-|:-----------:	|:----------------------:	|:----:	|:---:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|:--:	|
-|    Camera   	|     Camera data bus    	|   B  	|  8  	|  9 	| 10 	| 11 	| 12 	| 13 	| 14 	| 15 	| 　 	| 　 	| 　 	| 　 	|
-|             	|     Camera control     	|   C  	|  2  	|  3 	|  6 	|  7 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|             	|       Camera FIFO      	|   A  	|  2  	|  3 	|  8 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|             	|                        	|   C  	|  4  	|  5 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|             	|                        	|   D  	|  3  	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|     LCD     	|       LCD Display      	|   D  	|  0  	|  1 	|  4 	|  5 	|  7 	|  8 	|  9 	| 10 	| 11 	| 12 	| 14 	| 15 	|
-|             	|                        	|   E  	|  1  	|  7 	|  8 	|  9 	| 10 	| 11 	| 12 	| 13 	| 14 	| 15 	| 　 	| 　 	|
-|             	|        LCD Touch       	|   D  	|  13 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|             	|                        	|   E  	|  0  	|  2 	|  3 	|  4 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|     UART    	|         USART1         	|   A  	|  9  	| 10 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-| TIM1 (TRIG) 	|         HC-SR04        	|   A  	|  12 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-| TIM1 (ECHO) 	|         HC-SR04        	|   A  	|  11 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|   TIM3_CH1  	| Stepper Speed (Backup) 	|   A  	|  6  	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|   TIM3_CH2  	|      Stepper Speed     	|   A  	|  7  	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-| GPIO-OUTPUT 	|  Stepper Dir (Backup)  	|   E  	|  5  	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-| GPIO-OUTPUT 	|       Stepper Dir      	|   E  	|  6  	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
-|   TIM4_CH1  	|           FAN          	|   B  	|  6  	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	| 　 	|
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow">Function</th>
+    <th class="tg-c3ow">Device/Config</th>
+    <th class="tg-c3ow">Port</th>
+    <th class="tg-c3ow">Pin</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">Camera</td>
+    <td class="tg-c3ow">Camera data bus</td>
+    <td class="tg-c3ow">B</td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">9</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">11</td>
+    <td class="tg-c3ow">12</td>
+    <td class="tg-c3ow">13</td>
+    <td class="tg-c3ow">14</td>
+    <td class="tg-c3ow">15</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Camera control</td>
+    <td class="tg-c3ow">C</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">6</td>
+    <td class="tg-c3ow">7</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Camera FIFO</td>
+    <td class="tg-c3ow">A</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">C</td>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">D</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">LCD</td>
+    <td class="tg-c3ow">LCD Display</td>
+    <td class="tg-c3ow">D</td>
+    <td class="tg-c3ow">0</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">7</td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">9</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">11</td>
+    <td class="tg-c3ow">12</td>
+    <td class="tg-c3ow">14</td>
+    <td class="tg-c3ow">15</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">E</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">7</td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">9</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">11</td>
+    <td class="tg-c3ow">12</td>
+    <td class="tg-c3ow">13</td>
+    <td class="tg-c3ow">14</td>
+    <td class="tg-c3ow">15</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">LCD Touch</td>
+    <td class="tg-c3ow">D</td>
+    <td class="tg-c3ow">13</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">E</td>
+    <td class="tg-c3ow">0</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">UART</td>
+    <td class="tg-c3ow">USART1</td>
+    <td class="tg-c3ow">A</td>
+    <td class="tg-c3ow">9</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">TIM1 (TRIG)</td>
+    <td class="tg-c3ow">HC-SR04</td>
+    <td class="tg-c3ow">A</td>
+    <td class="tg-c3ow">12</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">TIM1 (ECHO)</td>
+    <td class="tg-c3ow">HC-SR04</td>
+    <td class="tg-c3ow">A</td>
+    <td class="tg-c3ow">11</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">TIM3_CH1</td>
+    <td class="tg-c3ow">Stepper Speed (Backup)</td>
+    <td class="tg-c3ow">A</td>
+    <td class="tg-c3ow">6</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">TIM3_CH2</td>
+    <td class="tg-c3ow">Stepper Speed</td>
+    <td class="tg-c3ow">A</td>
+    <td class="tg-c3ow">7</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">GPIO-OUTPUT</td>
+    <td class="tg-c3ow">Stepper Dir (Backup)</td>
+    <td class="tg-c3ow">E</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">GPIO-OUTPUT</td>
+    <td class="tg-c3ow">Stepper Dir</td>
+    <td class="tg-c3ow">E</td>
+    <td class="tg-c3ow">6</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">TIM4_CH1</td>
+    <td class="tg-c3ow">FAN</td>
+    <td class="tg-c3ow">B</td>
+    <td class="tg-c3ow">6</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+    <td class="tg-c3ow">　</td>
+  </tr>
+</tbody>
+</table>
