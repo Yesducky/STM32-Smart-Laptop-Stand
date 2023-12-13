@@ -1,6 +1,6 @@
 # STM32-Smart-Laptop-Stand
 
-Function:
+Function:\
 Automatically adjust the height of the laptop stand according to the user's height. Manual adjustment also allowed.
 
 Workflow:
@@ -13,7 +13,7 @@ Workflow:
 7. Control the actuators to adjust the laptop stand
 8. Keep updating the current height of the smart laptop stand while adjustment
 
-Alt Function:
+Alt Function:\
 Laptop cooling fan - 3 different levels of fan speed can be adjusted through touch screen
 
 Hardware:  
