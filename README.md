@@ -6,12 +6,12 @@ Automatically adjust the height of the laptop stand according to the user's heig
 #### Workflow: ####
 1. User click the auto button on the touch screen
 2. Camera capture an image and send to the computer
-3. Use OpenCV to obtain the height
-4. STM32 retrieve the height data
+3. Use OpenCV to obtain the face position of the user 
+4. Send the position data to STM32
 5. Obtain the distance between the camera and user using ultrasonic distance sensor
 6. Calculate the most suitable height for the user with these 2 data
-7. Control the actuators to adjust the laptop stand
-8. Keep updating the current height of the smart laptop stand while adjustment
+7. Control the actuators to adjust the laptop stand to the most suitable height
+8. Keep updating the current height on the screen during height adjustment
 
 ### Alt Function: ###
 Laptop cooling fan - 3 different levels of fan speed can be adjusted through touch screen
