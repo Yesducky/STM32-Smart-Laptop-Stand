@@ -31,7 +31,7 @@ Laptop cooling fan - 3 different levels of fan speed which can be adjusted by th
 
 <br>
 
-###Pinout:###
+### Pinout: ###
 <table class="tg">
 <thead>
   <tr>
