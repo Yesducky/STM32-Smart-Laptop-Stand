@@ -14,7 +14,7 @@ Automatically adjust the height of the laptop stand according to the user's heig
 8. Keep updating the current height on the screen during height adjustment
 
 ### Alt Function: ###
-Laptop cooling fan - 3 different levels of fan speed can be adjusted through touch screen
+Laptop cooling fan - 3 different levels of fan speed which can be adjusted by the touch screen
 
 ### Hardware: ### 
 - [x] STM32F103VET6   
